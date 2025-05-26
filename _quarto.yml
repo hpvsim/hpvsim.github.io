@@ -1,0 +1,24 @@
+project:
+  type: website
+
+format:
+  html:
+    toc: true
+    theme: lux
+    css: styles.css
+
+website:
+  title: "HPVsim"
+  navbar:
+    search: true
+    tools:
+      - icon: github
+        menu:
+          - text: Source Code
+            href:  https://github.com/starsimhub/hpvsim
+          - text: Report a Bug
+            href:  https://github.com/starsimhub/hpvsim/issues
+  page-footer: "© 2022-2025 Gates Foundation. HPVsim is distributed under the MIT License."
+
+execute:
+  freeze: auto

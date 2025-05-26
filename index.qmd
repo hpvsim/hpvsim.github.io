@@ -1,0 +1,68 @@
+---
+title: "Human papillomavirus simulator (HPVsim)"
+---
+
+## Overview
+
+HPVsim is a flexible agent-based model for simulation HPV transmission and progression through cervical disease to cancer. The model can be parameterized with country-specific vital dynamics, structured sexual networks, co-transmitting HPV genotypes, B- and T-cell mediated immunity, and high-resolution disease natural history. HPVsim is designed with a user-first lens: it is implemented in pure Python, has built-in tools for simulating commonly-used interventions, has been extensively tested and documented, and runs in a matter of seconds to minutes on a laptop.
+
+<!-- external links (top) -->
+<div class="col-md-12 ml-auto mr-auto">
+  <ul id="icons-links" class="text-center" style="margin-top:0px; list-style: none; padding: 0;">
+    <li style="display:inline; margin: 5px;">
+      <a href="https://docs.hpvsim.org" target="_blank">
+        <button class="btn btn-primary">
+          <img src="https://icongr.am/octicons/code.svg?size=30&color=ffffff" alt="Docs" style="vertical-align:middle;">
+          &nbsp;&nbsp;Docs
+        </button>
+      </a>
+    </li>
+    <li style="display:inline; margin: 5px;">
+      <a href="https://docs.idmod.org/projects/hpvsim/en/v2.0.0/tutorials.html" target="_blank">
+        <button class="btn btn-primary">
+          <img src="https://icongr.am/fontawesome/lightbulb-o.svg?size=30&color=ffffff" alt="Tutorials" style="vertical-align:middle;" height="30">
+          &nbsp;Tutorials
+        </button>
+      </a>
+    </li>
+    <li style="display:inline; margin: 5px;">
+      <a href="https://github.com/starsimhub/hpvsim_orig" target="_blank">
+        <button class="btn btn-primary">
+          <img src="https://icongr.am/octicons/mark-github.svg?size=30&color=ffffff" alt="Code: v2.2" style="vertical-align:middle;">
+          &nbsp;&nbsp;Code: v2.2
+        </button>
+      </a>
+    </li>
+    <li style="display:inline; margin: 5px;">
+      <a href="https://github.com/starsimhub/hpvsim" target="_blank">
+        <button class="btn btn-primary">
+          <img src="https://icongr.am/octicons/mark-github.svg?size=30&color=ffffff" alt="Code: v3.0 (beta)" style="vertical-align:middle;">
+          &nbsp;&nbsp;Code: v3.0 (beta)
+        </button>
+      </a>
+    </li>
+  </ul>
+</div>
+
+## HPVsim versions
+
+HPVsim was first released in mid-2022 as a fully-documented open-source Python [package](https://github.com/starsimhub/hpvsim_orig), and model development continued until version 2.2, which was released in May 2025. In mid-2025, version 3.0 of HPVsim will be released, built on the [Starsim](https://starsim.org/) modeling architecture. Since this represents a significant shift, version 3.0 and above will live in a [separate repository](https://github.com/starsimhub/hpvsim). The original version of HPVsim will be frozen after version 2.2, aside from any critical bugfixes.
+
+## Publications
+
+The scientific [paper](https://doi.org/10.1371/journal.pcbi.1012181) describing HPVsim was published in 2024 in Plos Computational Biology. The recommended citation is:
+
+Stuart RM, Cohen JA, Kerr CC, Mathur P, NDMC India, Zimmermann M, Rao DW, Boudreau MC, Lee S, Yang L, Klein DJ (2024). HPVsim: An agent-based model of HPV transmission and cervical disease. *PLOS Computational Biology*, 20(7), e1012181. https://doi.org/10.1371/journal.pcbi.1012181
+
+Academic papers that have been written using HPVsim include:
+
+1. **Inferring the natural history of HPV from global cancer registries: insights from a multi-country calibration** (2024). Stuart RM, Cohen JA, Abeysuriya RG, Sanz-Leon P, Kerr CC, Rao DW, Klein DJ. *Sci Rep* 14, 15875. https://doi.org/10.1038/s41598-024-65842-3
+
+2. **HPV DNA Screening and Vaccination Strategies in Tunisia** (2025). Lahdhiri A, Benzina B, Ennaifer E, Tounsi H, Gzara A, Rammeh-Rommani S, Laraj O, Arfaoui H, Stuart RM, Kebir, A, BenMiled S (2025). *Sci Rep*, forthcoming. 
+
+3. **Can pruning improve agent-based models’ calibration? An application to HPVsim** (2025). Sturman F, Swallow B, Kerr CC, Stuart RM, Panovska-Griffiths J. *Journal of Theoretical Biology*, forthcoming.
+
+## Contact
+If you have questions or would like to collaborate, please get in touch!
+
+<a href="mailto:info@hpvsim.info" class="btn btn-primary" role="button">Email Us</a>
