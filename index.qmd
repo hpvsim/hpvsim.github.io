@@ -13,7 +13,7 @@ HPVsim is a flexible agent-based model for simulation HPV transmission and progr
       <a href="https://docs.hpvsim.org" target="_blank">
         <button class="btn btn-primary">
           <img src="https://icongr.am/octicons/code.svg?size=30&color=ffffff" alt="Docs" style="vertical-align:middle;">
-          &nbsp;&nbsp;Docs
+          Docs
         </button>
       </a>
     </li>
@@ -21,7 +21,7 @@ HPVsim is a flexible agent-based model for simulation HPV transmission and progr
       <a href="https://docs.idmod.org/projects/hpvsim/en/v2.0.0/tutorials.html" target="_blank">
         <button class="btn btn-primary">
           <img src="https://icongr.am/fontawesome/lightbulb-o.svg?size=30&color=ffffff" alt="Tutorials" style="vertical-align:middle;" height="30">
-          &nbsp;Tutorials
+          Tutorials
         </button>
       </a>
     </li>
@@ -29,7 +29,7 @@ HPVsim is a flexible agent-based model for simulation HPV transmission and progr
       <a href="https://github.com/starsimhub/hpvsim_orig" target="_blank">
         <button class="btn btn-primary">
           <img src="https://icongr.am/octicons/mark-github.svg?size=30&color=ffffff" alt="Code: v2.2" style="vertical-align:middle;">
-          &nbsp;&nbsp;Code: v2.2
+          Code: v2.2
         </button>
       </a>
     </li>
@@ -37,7 +37,7 @@ HPVsim is a flexible agent-based model for simulation HPV transmission and progr
       <a href="https://github.com/starsimhub/hpvsim" target="_blank">
         <button class="btn btn-primary">
           <img src="https://icongr.am/octicons/mark-github.svg?size=30&color=ffffff" alt="Code: v3.0 (beta)" style="vertical-align:middle;">
-          &nbsp;&nbsp;Code: v3.0 (beta)
+          Code: v3.0 (beta)
         </button>
       </a>
     </li>
@@ -52,7 +52,7 @@ HPVsim was first released in mid-2022 as a fully-documented open-source Python [
 
 The scientific [paper](https://doi.org/10.1371/journal.pcbi.1012181) describing HPVsim was published in 2024 in Plos Computational Biology. The recommended citation is:
 
-Stuart RM, Cohen JA, Kerr CC, Mathur P, NDMC India, Zimmermann M, Rao DW, Boudreau MC, Lee S, Yang L, Klein DJ (2024). HPVsim: An agent-based model of HPV transmission and cervical disease. *PLOS Computational Biology*, 20(7), e1012181. https://doi.org/10.1371/journal.pcbi.1012181
+  Stuart RM, Cohen JA, Kerr CC, Mathur P, NDMC India, Zimmermann M, Rao DW, Boudreau MC, Lee S, Yang L, Klein DJ (2024). HPVsim: An agent-based model of HPV transmission and cervical disease. *PLOS Computational Biology*, 20(7), e1012181. https://doi.org/10.1371/journal.pcbi.1012181
 
 Academic papers that have been written using HPVsim include:
 
