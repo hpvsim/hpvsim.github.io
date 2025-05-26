@@ -10,6 +10,7 @@ format:
 website:
   title: "HPVsim"
   navbar:
+    logo: starsim-logo-dark.png
     search: true
     tools:
       - icon: github
@@ -18,7 +19,20 @@ website:
             href:  https://github.com/starsimhub/hpvsim
           - text: Report a Bug
             href:  https://github.com/starsimhub/hpvsim/issues
-  page-footer: "© 2022-2025 Gates Foundation. HPVsim is distributed under the MIT License."
+  page-footer:
+    left: |
+      [Privacy and Cookies Notice](https://www.gatesfoundation.org/Privacy-and-Cookies-Notice) |
+      [Terms of Use](https://www.gatesfoundation.org/Terms-of-Use)
+    center: |
+      © 2022–2025, Gates Foundation. All rights reserved.
+    right:
+      - icon: github
+        href: https://github.com/starsimhub/hpvsim
+        aria-label: GitHub
+      - icon: envelope-at-fill
+        href: mailto:info@hpvsim.org
+      - icon: globe
+        href: https://hpvsim.org/
 
 execute:
   freeze: auto
