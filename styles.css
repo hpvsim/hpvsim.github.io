@@ -1,0 +1,19 @@
+/* Global font settings */
+body, p {
+  font-family: "Raleway", "Montserrat", "Lato", "Open Sans", sans-serif;
+  font-weight: 400; /* Was defaulting to 200 */
+}
+
+/* Remove lines around boxes (by ChatGPT) */
+#icons-links a,
+#icons-links button {
+  text-decoration: none;
+  outline: none;
+  border: none;
+}
+
+#icons-links button:focus,
+#icons-links a:focus {
+  outline: none;
+  box-shadow: none;
+}
