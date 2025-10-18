@@ -7,6 +7,9 @@ format:
     theme: lux
     css: styles.css
 
+resources:
+  - CNAME
+
 website:
   title: "HPVsim"
   navbar:
