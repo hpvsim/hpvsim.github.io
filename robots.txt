@@ -1,1 +1,1 @@
-Sitemap: https://hpvsim.org/sitemap.xml
+Sitemap: https://hpvsim.github.io/sitemap.xml
