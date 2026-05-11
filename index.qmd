@@ -46,7 +46,7 @@ HPVsim is a flexible agent-based model for simulation HPV transmission and progr
 
 ## HPVsim versions
 
-HPVsim was first released in mid-2022 as a fully-documented open-source Python [package](https://github.com/starsimhub/hpvsim_orig), and model development continued until version 2.2, which was released in May 2025. In mid-2025, version 3.0 of HPVsim will be released, built on the [Starsim](https://starsim.org/) modeling architecture. Since this represents a significant shift, version 3.0 and above will live in a [separate repository](https://github.com/starsimhub/hpvsim). The original version of HPVsim will be frozen after version 2.2, aside from any critical bugfixes.
+HPVsim was first released in mid-2022 as a fully-documented open-source Python [package](https://github.com/starsimhub/hpvsim), and model development continued until version 2.3, which was released in April 2026. In mid-2026, version 3.0 of HPVsim will be released, built on the [Starsim](https://starsim.org/) modeling architecture. The original version of HPVsim will be frozen after version 2.3, aside from any critical bugfixes.
 
 ## Publications
 
