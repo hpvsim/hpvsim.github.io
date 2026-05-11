@@ -58,11 +58,13 @@ The scientific [paper](https://doi.org/10.1371/journal.pcbi.1012181) describing 
 
 Academic papers that have been written using HPVsim include:
 
-1. **Inferring the natural history of HPV from global cancer registries: insights from a multi-country calibration** (2024). Stuart RM, Cohen JA, Abeysuriya RG, Sanz-Leon P, Kerr CC, Rao DW, Klein DJ. *Sci Rep* 14, 15875. <https://doi.org/10.1038/s41598-024-65842-3>
+1. **The role of HPV single-dose vaccination in expanding access in GAVI-supported countries during a period of supply constraints** (2026). Stuart RM, Theopold T, Miall N, Kobayashi E, Vernam S, Taskin T, Dull PM. *Vaccine*, 75:128187. <https://doi.org/10.1016/j.vaccine.2025.128187>
 
-2. **HPV DNA Screening and Vaccination Strategies in Tunisia** (2025). Lahdhiri A, Benzina B, Ennaifer E, Tounsi H, Gzara A, Rammeh-Rommani S, Laraj O, Arfaoui H, Stuart RM, Kebir, A, BenMiled S (2025). *Sci Rep*, forthcoming. 
+2. **Can pruning improve agent-based models’ calibration? An application to HPVsim** (2025). Sturman F, Swallow B, Kerr CC, Stuart RM, Panovska-Griffiths J. *Journal of Theoretical Biology*, 21;611:112130. <https://doi.org/10.1016/j.jtbi.2025.112130>
 
-3. **Can pruning improve agent-based models’ calibration? An application to HPVsim** (2025). Sturman F, Swallow B, Kerr CC, Stuart RM, Panovska-Griffiths J. *Journal of Theoretical Biology*, forthcoming.
+3. **HPV DNA Screening and Vaccination Strategies in Tunisia** (2025). Lahdhiri A, Benzina B, Ennaifer E, Tounsi H, Gzara A, Rammeh-Rommani S, Laraj O, Arfaoui H, Stuart RM, Kebir, A, BenMiled S (2025). *Sci Rep*, 15(1):27916. <https://doi.org/10.1038/s41598-025-13423-3>
+
+4. **Inferring the natural history of HPV from global cancer registries: insights from a multi-country calibration** (2024). Stuart RM, Cohen JA, Abeysuriya RG, Sanz-Leon P, Kerr CC, Rao DW, Klein DJ. *Sci Rep* 14, 15875. <https://doi.org/10.1038/s41598-024-65842-3>
 
 ## Contact
 If you have questions or would like to collaborate, please get in touch!
