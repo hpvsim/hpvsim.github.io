@@ -18,4 +18,7 @@ outputs:
   - label: IPVC 2025 talk (Bangkok)
     href: /presentations/ipvc-2025-older-cohorts.pdf
     kind: slides
+  - label: EUROGIN 2026 talk (HPV vaccination in adults)
+    href: /presentations/eurogin-2026-adult-vaccination.pdf
+    kind: slides
 ---
