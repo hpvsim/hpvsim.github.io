@@ -25,6 +25,12 @@ outputs:
   - label: Stuart et al. 2024 · PLOS Computational Biology
     href: https://doi.org/10.1371/journal.pcbi.1012181
     kind: paper
+  - label: EUROGIN 2023 talk (Bilbao)
+    href: /presentations/eurogin-2023.pdf
+    kind: slides
+  - label: EUROGIN 2024 talk (Stockholm)
+    href: /presentations/eurogin-2024.pdf
+    kind: slides
 related:
   - global-cancer-registry-calibration
 ---

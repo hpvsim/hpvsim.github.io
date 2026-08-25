@@ -15,6 +15,9 @@ findings:
 outputs:
   - label: Umeh et al. (forthcoming)
     kind: paper
+  - label: IPVC 2025 talk (Bangkok)
+    href: /presentations/ipvc-2025-nigeria-infant-vaccination.pdf
+    kind: slides
 related:
   - vaccination-older-cohorts
 ---

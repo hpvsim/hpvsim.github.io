@@ -24,6 +24,12 @@ outputs:
   - label: Stuart et al. 2024 · Scientific Reports
     href: https://doi.org/10.1038/s41598-024-65842-3
     kind: paper
+  - label: EPIDEMICS9 poster (Bologna)
+    href: /presentations/epidemics9-2023.pdf
+    kind: poster
+  - label: IDM Symposium 2023 talk (Seattle)
+    href: /presentations/idm-symposium-2023.pdf
+    kind: slides
 related:
   - hpvsim-methods
 ---

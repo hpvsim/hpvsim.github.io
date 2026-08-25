@@ -16,5 +16,6 @@ findings:
     blocking effect, at IPVC 2025.
 outputs:
   - label: IPVC 2025 talk (Bangkok)
+    href: /presentations/ipvc-2025-older-cohorts.pdf
     kind: slides
 ---
