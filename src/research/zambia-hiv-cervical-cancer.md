@@ -11,9 +11,11 @@ researchThemes: [hiv]
 themes: [HIV, Cervical cancer burden]
 setting: Zambia
 findings:
+  - Almost 50% of cervical cancers in Zambia can be attributed to HIV coinfection.
+  - Antiretroviral therapy (ART) prevented approximately 5% of cancer cases.
   - >-
-    Forthcoming in Nature Scientific Reports — findings to be added once
-    published.
+    HIV-stratified prevention strategies will be essential for Zambia to
+    achieve cervical cancer elimination targets.
 outputs:
   - label: Stuart et al. (forthcoming) · Nature Scientific Reports
     kind: paper

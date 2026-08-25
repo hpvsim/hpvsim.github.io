@@ -24,7 +24,7 @@ outputs:
   - label: Stuart et al. 2026 · Vaccine
     href: https://doi.org/10.1016/j.vaccine.2025.128187
     kind: paper
-  - label: HPV Board meeting talk (Antwerp, 2026)
+  - label: HPV Board meeting presentation (Antwerp, 2026)
     href: /presentations/hpvboard-antwerp-2026.pdf
     kind: slides
 related:

@@ -27,7 +27,7 @@ outputs:
   - label: EPIDEMICS9 poster (Bologna)
     href: /presentations/epidemics9-2023.pdf
     kind: poster
-  - label: IDM Symposium 2023 talk (Seattle)
+  - label: IDM Symposium 2023 presentation (Seattle)
     href: /presentations/idm-symposium-2023.pdf
     kind: slides
 related:

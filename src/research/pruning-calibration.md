@@ -6,15 +6,15 @@ order: 2
 lead: >-
   Tests whether pruning — discarding unpromising parameter sets partway
   through a calibration run — can speed up HPVsim calibration without
-  degrading fit quality. (Lead drafted from the paper's title only —
-  please check against the full text before publishing.)
+  degrading fit quality.
 researchThemes: [modeling-calibration]
 themes: [Calibration methods]
 setting: Cross-cutting / methods
 findings:
   - >-
-    Placeholder — replace with the paper's actual results before publishing;
-    not yet drafted from the full text.
+    Pruning (the early termination of unpromising calibration trials) can
+    notably speed up calibration of agent-based models, in many cases
+    without compromising on calibration quality.
 outputs:
   - label: Sturman et al. 2025 · Journal of Theoretical Biology
     href: https://doi.org/10.1016/j.jtbi.2025.112130

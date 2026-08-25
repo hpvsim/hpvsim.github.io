@@ -12,6 +12,11 @@ themes: [Test-and-vaccinate, Rwanda]
 setting: Rwanda
 findings:
   - >-
-    DRAFT — please review and correct; no results summarized yet.
-outputs: []
+    Rwanda is a global exemplar in HPV vaccination, but could further reduce
+    the residual burden of cervical cancer with existing tools and
+    techniques, optionally supplemented by novel therapeutic vaccines.
+outputs:
+  - label: EPIDEMICS 10 presentation (San Diego)
+    href: /presentations/epidemics10-2025-rwanda.pdf
+    kind: poster
 ---
