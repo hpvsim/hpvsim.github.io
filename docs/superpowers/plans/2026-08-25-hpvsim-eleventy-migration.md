@@ -66,10 +66,13 @@ each decision, this plan has the exact files and content).
 - [ ] **Step 1: Remove the Quarto site and its build artifacts**
 
 ```bash
-cd /Users/robynstuart/gf/hpvsim.github.io
-git rm -r --cached _quarto.yml index.qmd styles.css starsim-logo-dark.png _site
-rm -rf _quarto.yml index.qmd styles.css starsim-logo-dark.png _site .quarto
+git rm -r --cached _quarto.yml index.qmd styles.css starsim-logo-dark.png _site CNAME
+rm -rf _quarto.yml index.qmd styles.css starsim-logo-dark.png _site .quarto CNAME
 ```
+
+(`CNAME` is deleted here, not in Task 2 — it's replaced by `public/CNAME` in
+Task 2 Step 2, but there's no reason to keep the stale root copy around
+in between.)
 
 - [ ] **Step 2: Write `package.json`**
 
@@ -235,10 +238,15 @@ node_modules
 _site
 .cache
 package-lock.json
+.worktrees/
 ```
 
 (Drops the Quarto-specific `/.quarto/` and `**/*.quarto_ipynb` entries — no
-longer relevant once Quarto is gone.)
+longer relevant once Quarto is gone — but keeps `.worktrees/`, which has
+nothing to do with Quarto: it's how isolated implementation branches like
+this one avoid getting swept up by a stray `git add -A` from the main
+checkout, and this file is the one that ends up on `main` once this branch
+merges.)
 
 - [ ] **Step 6: Install dependencies and confirm the build fails for the expected reason**
 
@@ -291,7 +299,8 @@ cp /Users/robynstuart/gf/stisim.github.io/public/starsim-mark-dark.png public/st
 ```
 hpvsim.org
 ```
-(→ `public/CNAME`, moved from the old repo-root `CNAME`, then delete the old one: `rm CNAME`)
+(→ `public/CNAME`; the old repo-root `CNAME` was already deleted in Task 1
+Step 1, alongside the other Quarto artifacts)
 
 ```
 User-agent: *
