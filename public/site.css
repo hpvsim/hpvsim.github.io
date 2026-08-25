@@ -275,3 +275,10 @@ a { color: inherit; }
 .news-item h4 a:hover { color: var(--teal-d); }
 .news-item p { font-size: 13.5px; color: var(--muted); line-height: 1.5; margin: 0; }
 @media (max-width: 480px) { .news-item { grid-template-columns: 1fr; } }
+
+/* ---------------------------------------------------------------- countries */
+
+.countries { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 10px; }
+.countries a { font-size: 14px; padding: 8px 16px; border-radius: 999px; text-decoration: none;
+  border: 1px solid var(--line); color: var(--teal-d); background: var(--surface); }
+.countries a:hover { border-color: var(--teal); }

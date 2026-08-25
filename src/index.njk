@@ -70,6 +70,19 @@ HPVsim is an agent-based model of HPV transmission and progression through cervi
   </div>
 </section>
 
+<section id="countries" class="sec">
+  <div class="wrap">
+    <p class="kicker">Countries</p>
+    <p class="sub">Settings where HPVsim has informed policy through a published or forthcoming study.</p>
+    <ul class="countries">
+      {% for c in countries %}
+      {% set study = collections.studies | findStudy(c.studySlug) %}
+      <li><a href="{{ studyHref(study) }}">{{ c.name }}</a></li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
+
 <section id="news" class="sec">
   <div class="wrap">
     <p class="kicker">News</p>
