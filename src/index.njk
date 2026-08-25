@@ -1,8 +1,56 @@
 ---
 layout: base.njk
+modelLinks:
+  - [Docs, 'https://docs.hpvsim.org']
+  - [Tutorials, 'https://docs.hpvsim.org/tutorials']
+  - [Code, 'https://github.com/starsimhub/hpvsim']
+  - [Legacy v2.2, 'https://github.com/starsimhub/hpvsim_orig']
+filters:
+  - [all, All]
+  - [in-flight, In flight]
+  - [peer-reviewed, Peer-reviewed]
+  - [publications, Publications]
 ---
-<section class="hero">
+{% from "components.njk" import studyCard %}
+
+<section id="model" class="hero">
   <div class="wrap">
+    <p class="eyebrow">Agent-based HPV + cervical disease modeling · Built on Starsim</p>
     <h1>HPVsim</h1>
+    <p class="lede">
+HPVsim is an agent-based model of HPV transmission and progression through cervical disease to cancer. It supports country-specific vital dynamics, structured sexual networks, co-transmitting HPV genotypes, B- and T-cell mediated immunity, and high-resolution disease natural history, plus built-in tools for vaccination, screening, and treatment interventions. It is implemented in pure Python, extensively tested and documented, and runs in seconds to minutes on a laptop.
+    </p>
+    <p class="versions">
+      <strong>v3.0</strong> (released July 2026) is built on the
+      <a href="https://starsim.org" target="_blank" rel="noopener">Starsim</a>
+      architecture and is the actively developed line. The pre-Starsim
+      <strong>v2.2</strong> release is frozen aside from critical bugfixes.
+    </p>
+    <div class="installs">
+      <div class="inst">
+        <span class="lbl">Installation</span>
+        <code>pip install hpvsim</code>
+      </div>
+    </div>
+    <div class="links">
+      {% for link in modelLinks %}
+      <a href="{{ link[1] }}" target="_blank" rel="noopener">{{ link[0] }} <i>↗</i></a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section id="research" class="sec">
+  <div class="wrap">
+    <p class="kicker">Research</p>
+    <p class="sub">What has been done with the model, and what is under way.</p>
+    <div class="chips" role="tablist">
+      {% for f in filters %}
+      <button class="chip{{ ' on' if loop.first }}" data-f="{{ f[0] }}">{{ f[1] }}</button>
+      {% endfor %}
+    </div>
+    <div class="grid">
+      {% for study in collections.studies %}{{ studyCard(study) }}{% endfor %}
+    </div>
   </div>
 </section>
