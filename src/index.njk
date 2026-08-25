@@ -69,3 +69,20 @@ HPVsim is an agent-based model of HPV transmission and progression through cervi
     </div>
   </div>
 </section>
+
+<section id="news" class="sec">
+  <div class="wrap">
+    <p class="kicker">News</p>
+    <ul class="news-list">
+      {% for item in collections.news %}
+      <li class="news-item">
+        <span class="news-date">{{ item.data.date | isoDate }}</span>
+        <div>
+          <h4>{% if item.data.href %}<a href="{{ item.data.href }}" target="_blank" rel="noopener">{{ item.data.title }} <i>↗</i></a>{% else %}{{ item.data.title }}{% endif %}</h4>
+          <p>{{ item.data.blurb }}</p>
+        </div>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
