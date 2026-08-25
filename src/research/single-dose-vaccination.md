@@ -24,4 +24,7 @@ outputs:
   - label: Stuart et al. 2026 · Vaccine
     href: https://doi.org/10.1016/j.vaccine.2025.128187
     kind: paper
+related:
+  - nigeria-infant-vaccination
+  - vaccination-older-cohorts
 ---
