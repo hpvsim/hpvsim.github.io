@@ -11,7 +11,7 @@ filters:
   - [peer-reviewed, Peer-reviewed]
   - [publications, Publications]
 ---
-{% from "components.njk" import studyCard %}
+{% from "components.njk" import studyCard, studyHref %}
 
 <section id="model" class="hero">
   <div class="wrap">
@@ -44,6 +44,21 @@ HPVsim is an agent-based model of HPV transmission and progression through cervi
   <div class="wrap">
     <p class="kicker">Research</p>
     <p class="sub">What has been done with the model, and what is under way.</p>
+
+    <div class="themes">
+      {% for theme in researchThemeIntros %}
+      <div class="theme">
+        <h3>{{ theme.name }}</h3>
+        <p>{{ theme.blurb }}</p>
+        <ul class="theme-links">
+          {% for study in collections.studies | byTheme(theme.slug) %}
+          <li><a href="{{ studyHref(study) }}">{{ study.data.code }} — {{ study.data.title }}</a></li>
+          {% endfor %}
+        </ul>
+      </div>
+      {% endfor %}
+    </div>
+
     <div class="chips" role="tablist">
       {% for f in filters %}
       <button class="chip{{ ' on' if loop.first }}" data-f="{{ f[0] }}">{{ f[1] }}</button>
