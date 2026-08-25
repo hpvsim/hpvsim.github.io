@@ -130,7 +130,7 @@ New collection, parallel to `src/research/`:
 
 Rendered as a plain reverse-chronological list (title, date, blurb, optional
 "Read more ↗" link) in its own homepage section. No filtering, no pagination —
-nine items today, revisit if it grows past ~30.
+eight items today, revisit if it grows past ~30.
 
 ### Countries/deployments
 
