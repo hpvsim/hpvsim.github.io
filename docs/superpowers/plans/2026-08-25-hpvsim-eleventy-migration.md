@@ -1486,18 +1486,25 @@ git commit -m "Move presentation PDFs into public/presentations/, wire into outp
 ## Task 7: Research themes data and homepage sections
 
 **Files:**
-- Create: `src/_data/researchThemes.js`
+- Create: `src/_data/researchThemeIntros.js`
 - Modify: `src/index.njk` (insert the themes block into the `#research` section, above the filter chips)
 - Modify: `public/site.css` (append `.themes` styles)
 
 **Interfaces:**
 - Consumes: `byTheme` filter and `studyHref` macro (both already wired in Tasks 1 and 2); `collections.studies` (Tasks 3-6 must be complete so every card has a `researchThemes` value to filter on).
-- Produces: `researchThemes` global data array, consumed nowhere else (this is the last place it's read).
+- Produces: `researchThemeIntros` global data array, consumed nowhere else (this is the last place it's read).
 
-- [ ] **Step 1: Write `src/_data/researchThemes.js`**
+- [ ] **Step 1: Write `src/_data/researchThemeIntros.js`**
 
 Eleventy auto-loads any file under `src/_data/` as global template data keyed
-by filename — no manual registration needed in `eleventy.config.js`.
+by filename — no manual registration needed in `eleventy.config.js`. The
+filename (and therefore the global data key) is deliberately NOT
+`researchThemes.js`: that would collide with the per-study frontmatter field
+of the same name (defined in Task 3) — Eleventy's data cascade deep-merges
+global data and frontmatter data under matching keys, so every study's own
+`researchThemes: [slug]` array would get concatenated with these four theme
+objects, corrupting the field the validator and `byTheme` filter both rely
+on. Keep the two names visibly distinct.
 
 ```js
 export default [
@@ -1542,7 +1549,7 @@ class="sub">` line and before the `<div class="chips">` line:
     <p class="sub">What has been done with the model, and what is under way.</p>
 
     <div class="themes">
-      {% for theme in researchThemes %}
+      {% for theme in researchThemeIntros %}
       <div class="theme">
         <h3>{{ theme.name }}</h3>
         <p>{{ theme.blurb }}</p>
@@ -1977,8 +1984,10 @@ Card behaviour is derived, never stored:
 
 `researchThemes` is a separate field from `themes`: `themes` is free-text
 display tags shown on the study page, `researchThemes` drives which of the
-four homepage theme sections (`src/_data/researchThemes.js`) a study is
-listed under. A study can belong to more than one theme.
+four homepage theme sections (defined in `src/_data/researchThemeIntros.js`
+— note the different filename, deliberately not `researchThemes.js`, so it
+doesn't collide with this frontmatter field in Eleventy's data cascade) a
+study is listed under. A study can belong to more than one theme.
 
 Conference presentations aren't a separate content type — add them as an
 extra entry in a study's `outputs` array (`kind: slides` or `kind: poster`),
@@ -2002,7 +2011,7 @@ public/                     copied to the site root: site.css, site.js, CNAME, f
 src/index.njk               the single-page front door: hero, model, research (+ themes), countries, news
 src/research/*.md           one file per study, with the frontmatter schema alongside
 src/news/*.md               one file per news item
-src/_data/                  researchThemes.js, countries.js -- static data available to every template
+src/_data/                  researchThemeIntros.js, countries.js -- static data available to every template
 src/includes/                base.njk, study.njk, and header, footer, component macros
 ```
 
@@ -2088,11 +2097,32 @@ git commit -m "Add README for the new Eleventy site"
   the IDM talk's year (2023, not 2024, confirmed with the user) — the spec
   file was corrected in place before this plan was written, so both
   documents now agree.
-- **Type/name consistency:** `researchThemes` (data file: `src/_data/researchThemes.js`,
-  frontmatter field: `researchThemes`, filter: `byTheme`) is spelled and cased
-  consistently across every task. Study slugs referenced by `related:` fields
-  in Tasks 4-5 match the filenames created in those same tasks. Output hrefs
-  added in Task 6 match the exact filenames moved in Task 6 Step 1.
+- **Type/name consistency:** the frontmatter field `researchThemes` and the
+  filter `byTheme` are spelled and cased consistently across every task.
+  Study slugs referenced by `related:` fields in Tasks 4-5 match the
+  filenames created in those same tasks. Output hrefs added in Task 6 match
+  the exact filenames moved in Task 6 Step 1.
+- **Correction found during Task 7 implementation, not caught by this
+  self-review pass:** the homepage's global-data file was originally
+  planned as `src/_data/researchThemes.js`. Eleventy's data cascade
+  deep-merges global data into frontmatter data under matching key names, so
+  that filename collided with the per-study `researchThemes` frontmatter
+  field and silently corrupted it (each study's `[slug]` array got
+  concatenated with the four theme objects, which the validator then
+  correctly rejected). The Task 7 implementer hit this at build time,
+  diagnosed it precisely, and stopped rather than guessing at a fix outside
+  their task's file scope — exactly the right call, since the fix choice
+  (rename the new file vs. rename the already-reviewed frontmatter field
+  vs. disable Eleventy's deep-merge globally) has consequences for closed
+  tasks. Ruled: rename the new file/key to `researchThemeIntros`
+  (`src/_data/researchThemeIntros.js`) — keeps the fix entirely inside
+  Task 7's own files, touches nothing in Tasks 3-6. Fixed in the plan text
+  (Task 7 Steps 1-2, and the Task 10 README section) before resuming the
+  implementer. This is the kind of interface-naming collision the pre-flight
+  scan's pairwise table did not think to check (it wasn't yet a file that
+  existed) — worth remembering for future plans that add global `_data`
+  files alongside a content collection using a similarly-named frontmatter
+  field.
 - **Ordering bug caught and fixed:** Task 4's `single-dose-vaccination.md`
   originally pointed `related:` at `nigeria-infant-vaccination` and
   `vaccination-older-cohorts`, both created in Task 5 — that would have
