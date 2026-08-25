@@ -487,7 +487,7 @@ layout: base.njk
       <div class="chips">
         {% for o in outputs %}
           {% if o.href %}
-            <a class="chip" href="{{ o.href }}" target="_blank" rel="noopener">{{ o.label }} ↗</a>
+            <a class="chip" href="{{ o.href | url }}" target="_blank" rel="noopener">{{ o.label }} ↗</a>
           {% else %}
             <span class="chip">{{ o.label }}</span>
           {% endif %}
@@ -688,7 +688,11 @@ const RESEARCH_THEMES = [
 ];
 
 const isString = (v) => typeof v === 'string' && v.length > 0;
+// Accepts absolute URLs (DOIs, external links) and root-relative paths
+// (local assets like /presentations/x.pdf) -- new URL() alone throws on the
+// latter, which would wrongly fail every local presentation link.
 const isUrl = (v) => {
+  if (typeof v === 'string' && v.startsWith('/')) return true;
   try {
     new URL(v);
     return true;
@@ -1615,7 +1619,11 @@ git commit -m "Add research themes data and homepage intro sections"
 const KINDS = ['release', 'paper', 'press', 'talk', 'funding', 'other'];
 
 const isString = (v) => typeof v === 'string' && v.length > 0;
+// Accepts absolute URLs (DOIs, external links) and root-relative paths
+// (local assets like /presentations/x.pdf) -- new URL() alone throws on the
+// latter, which would wrongly fail every local presentation link.
 const isUrl = (v) => {
+  if (typeof v === 'string' && v.startsWith('/')) return true;
   try {
     new URL(v);
     return true;
