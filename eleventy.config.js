@@ -1,5 +1,6 @@
 import { validateStudies } from './src/research/research-validation.js';
 import { validateNews } from './src/news/news-validation.js';
+import countries from './src/_data/countries.js';
 
 const statusRank = { 'peer-reviewed': 0, 'write-up': 1, 'in-flight': 2 };
 
@@ -39,6 +40,12 @@ export default function (eleventyConfig) {
       .getFilteredByTag('study')
       .filter((item) => !item.data.draft);
     validateStudies(studies);
+    const studySlugs = new Set(studies.map((s) => s.data.slug));
+    for (const c of countries) {
+      if (!studySlugs.has(c.studySlug)) {
+        throw new Error(`countries.js: \`studySlug\` "${c.studySlug}" does not match any known study`);
+      }
+    }
     return studies.sort(
       (a, b) =>
         statusRank[a.data.status] - statusRank[b.data.status] ||

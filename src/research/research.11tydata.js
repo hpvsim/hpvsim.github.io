@@ -16,7 +16,8 @@ export default {
 
   eleventyComputed: {
     slug: (data) => data.page.fileSlug,
-    description: (data) => data.lead,
+    description: (data) =>
+      data.lead.startsWith('DRAFT') ? 'Details forthcoming.' : data.lead,
     permalink: (data) =>
       data.draft || data.dashboardUrl
         ? false
