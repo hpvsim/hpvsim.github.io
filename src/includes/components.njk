@@ -1,0 +1,45 @@
+{#
+  Shared UI pieces. Everything here is presentational: the caller passes data,
+  the macro decides nothing that isn't derivable from it.
+#}
+
+{% macro statusPill(status) %}
+{% set labels = { 'peer-reviewed': 'Peer-reviewed', 'in-flight': 'In flight', 'write-up': 'Write-up' } %}
+{% set classes = { 'peer-reviewed': 'ok', 'in-flight': 'fly', 'write-up': 'pub' } %}
+<span class="pill {{ classes[status] }}">{{ labels[status] }}</span>
+{% endmacro %}
+
+{% macro themeTag(name) %}
+<span class="tag">{{ name }}</span>
+{% endmacro %}
+
+{#
+  A study's link target: its own dashboardUrl if it has one (external page,
+  no page of its own), otherwise its own study page.
+#}
+{% macro studyHref(study) %}{{ study.data.dashboardUrl if study.data.dashboardUrl else (study.url | url) }}{% endmacro %}
+
+{% macro studyCard(study) %}
+{% set d = study.data %}
+{% set isDash = d.dashboardUrl %}
+{% set papers = d.outputs | countPapers %}
+<a class="card" href="{{ studyHref(study) }}"
+   data-filter="{{ d.status }}{{ ' publications' if d.status != 'in-flight' }}"
+   {% if isDash %}target="_blank" rel="noopener"{% endif %}>
+  <div class="row">
+    <span class="code">{{ d.code }}</span>
+    {{ statusPill(d.status) }}
+  </div>
+  <h3 style="view-transition-name: t-{{ d.slug }}">{{ d.title }}</h3>
+  <p class="blurb">{{ d.lead }}</p>
+  <div class="tags">{% for t in d.themes %}{{ themeTag(t) }}{% endfor %}</div>
+  <div class="foot">
+    {% if isDash %}
+      <span class="act accent">View page <i>↗</i></span>
+    {% else %}
+      <span class="act">Read writeup <i>→</i></span>
+      {% if papers %}<span class="papers">{{ papers }} {{ 'paper' if papers == 1 else 'papers' }}</span>{% endif %}
+    {% endif %}
+  </div>
+</a>
+{% endmacro %}

@@ -1,0 +1,60 @@
+---
+layout: base.njk
+---
+{% from "components.njk" import themeTag, statusPill %}
+{% set findingsLabel = "Key findings" if status == "peer-reviewed" else "What we're tracking" %}
+
+<article class="paper">
+  <div class="wrap">
+    <a class="back" href="{{ '/' | url }}#research">← All research</a>
+    <p class="code">{{ code }} · {{ statusPill(status) }}</p>
+    <h1 style="view-transition-name: t-{{ slug }}">{{ title }}</h1>
+    <p class="lead">{{ lead }}</p>
+
+    {% if findings.length %}
+    <section class="block">
+      <h2>{{ findingsLabel }}</h2>
+      <ul>{% for f in findings %}<li>{{ f }}</li>{% endfor %}</ul>
+    </section>
+    {% endif %}
+
+    {% if content %}<div class="body">{{ content | safe }}</div>{% endif %}
+
+    {% if outputs.length %}
+    <section class="block">
+      <h2>Outputs</h2>
+      <div class="chips">
+        {% for o in outputs %}
+          {% if o.href %}
+            <a class="chip" href="{{ o.href | url }}" target="_blank" rel="noopener">{{ o.label }} ↗</a>
+          {% else %}
+            <span class="chip">{{ o.label }}</span>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </section>
+    {% endif %}
+
+    <section class="block">
+      <h2>At a glance</h2>
+      <dl class="kv">
+        {% if themes.length %}<dt>Themes</dt><dd class="tags">{% for t in themes %}{{ themeTag(t) }}{% endfor %}</dd>{% endif %}
+        {% if setting %}<dt>Setting</dt><dd>{{ setting }}</dd>{% endif %}
+      </dl>
+    </section>
+
+    {% if related.length %}
+    <section class="block">
+      <h2>Related study</h2>
+      {% for relSlug in related %}
+        {% set r = collections.studies | findStudy(relSlug) %}
+        {% if r and r.url %}
+        <a class="rel" href="{{ r.url | url }}">
+          <span class="rc">{{ r.data.code }}</span>{{ r.data.title }}
+        </a>
+        {% endif %}
+      {% endfor %}
+    </section>
+    {% endif %}
+  </div>
+</article>
