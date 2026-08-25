@@ -168,7 +168,7 @@ copy needed, flagged for the user to correct before publishing):
 | Single-dose vaccination (Vaccine 2026) | peer-reviewed | vaccination-access | paper |
 | Pruning & calibration (JTB 2025) | peer-reviewed | modeling-calibration | paper |
 | Tunisia screening & vaccination (Sci Rep 2025) | peer-reviewed | vaccination-access, screening-treatment | paper |
-| Global cancer-registry calibration (Sci Rep 2024) | peer-reviewed | modeling-calibration | paper; EPIDEMICS9 poster; IDM Symposium 2024 talk (slides) |
+| Global cancer-registry calibration (Sci Rep 2024) | peer-reviewed | modeling-calibration | paper; EPIDEMICS9 poster; IDM Symposium 2023 talk (slides) |
 | Zambia: HIV/ART and cervical cancer burden (forthcoming, Nat Sci Rep) | in-flight | hiv | paper (forthcoming, no href) |
 | Nigeria: infant HPV vaccination (forthcoming) | in-flight | vaccination-access | paper (forthcoming, no href); IPVS 2025 talk (slides) |
 | *Extending vaccination to older cohorts ("HPVfaster") | in-flight | vaccination-access | IPVS 2025 talk (slides) only |
@@ -181,12 +181,12 @@ News items (reverse-chronological):
 |---|---|---|
 | 2026-07-24 | HPVsim v3.0 released | release |
 | 2026-02-23 | New Yorker covers single-dose HPV vaccination work, citing our analysis | press |
-| 2025-10-23 | Two talks at IPVS 2025, Bangkok (older-cohorts vaccination; Nigeria infant vaccination) | talk |
-| 2024-10-01 | Talk at IDM Annual Symposium 2024, Seattle | talk |
+| 2025-10-25 | Two talks at IPVC 2025, Bangkok (older-cohorts vaccination; Nigeria infant vaccination) | talk |
 | 2024-07-29 | Quantium Health receives multi-year Gates funding to apply HPVsim in South Africa, Tanzania, Nigeria | funding |
-| 2024-03-13 | Talk at EUROGIN 2024, Stockholm | talk |
+| 2024-03-13 | Talk at EUROGIN 2024, Stockholm (exact day not printed on the poster; using the conference's opening date) | talk |
 | 2023-11-28 | Poster at EPIDEMICS9, Bologna | talk |
-| 2023-02-08 | Talk at EUROGIN 2023, Bilbao | talk |
+| 2023-05-23 | Talk at IDM Symposium 2023, Seattle | talk |
+| 2023-02-10 | Talk at EUROGIN 2023, Bilbao (per title slide) | talk |
 
 Countries: Tunisia, Zambia, Nigeria (see rule above; Rwanda/South
 Africa/Tanzania excluded pending a paper).
