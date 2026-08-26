@@ -73,13 +73,66 @@ HPVsim is an agent-based model of HPV transmission and progression through cervi
 
 <section id="countries" class="sec">
   <div class="wrap">
-    {{ secHead("Countries", "Settings where HPVsim has informed policy through a published or forthcoming study.") }}
-    <ul class="countries">
-      {% for c in countries %}
-      {% set study = collections.studies | findStudy(c.studySlug) %}
-      <li><a href="{{ studyHref(study) }}">{{ c.name }}</a></li>
-      {% endfor %}
-    </ul>
+    {{ secHead("Countries", "HPVsim has been calibrated to numerous country contexts, some of which have been part of multi-country studies and others which are in-depth focused analyses looking at informing policy. Not all of these have been published, but the table below has details on how you can get more information about a particular country.") }}
+    <div class="countries-wrap">
+      <table class="countries">
+        <thead>
+          <tr>
+            <th>Country</th>
+            <th>Model/analysis details</th>
+            <th>Partners</th>
+            <th>Publications</th>
+            <th>Code/data</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for c in countries %}
+          <tr>
+            <td class="country-name">{{ c.name }}</td>
+            <td>
+              {% for a in c.analyses %}
+              <div class="cell-line">
+                {% if a.studySlug %}
+                {% set s = collections.studies | findStudy(a.studySlug) %}
+                <a href="{{ studyHref(s) }}">{{ a.label }}</a>
+                {% else %}
+                {{ a.label }}
+                {% endif %}
+              </div>
+              {% endfor %}
+            </td>
+            <td>
+              {% for a in c.analyses %}<div class="cell-line">{{ a.partners }}</div>{% endfor %}
+            </td>
+            <td>
+              {% for a in c.analyses %}
+              <div class="cell-line">
+                {% if a.pubHref %}
+                <a href="{{ a.pubHref }}" target="_blank" rel="noopener">{{ a.pubLabel }} ↗</a>
+                {% elif a.pubLabel %}
+                {{ a.pubLabel }}
+                {% else %}
+                —
+                {% endif %}
+              </div>
+              {% endfor %}
+            </td>
+            <td>
+              {% for a in c.analyses %}
+              <div class="cell-line">
+                {% if a.codeHref %}
+                <a href="{{ a.codeHref }}" target="_blank" rel="noopener">{{ a.codeLabel }} ↗</a>
+                {% else %}
+                —
+                {% endif %}
+              </div>
+              {% endfor %}
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
   </div>
 </section>
 

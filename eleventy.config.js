@@ -42,8 +42,12 @@ export default function (eleventyConfig) {
     validateStudies(studies);
     const studySlugs = new Set(studies.map((s) => s.data.slug));
     for (const c of countries) {
-      if (!studySlugs.has(c.studySlug)) {
-        throw new Error(`countries.js: \`studySlug\` "${c.studySlug}" does not match any known study`);
+      for (const a of c.analyses) {
+        if (a.studySlug !== undefined && !studySlugs.has(a.studySlug)) {
+          throw new Error(
+            `countries.js: ${c.name}'s \`studySlug\` "${a.studySlug}" does not match any known study`
+          );
+        }
       }
     }
     return studies.sort(
