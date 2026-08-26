@@ -12,7 +12,7 @@ document.addEventListener('click', function (e) {
   localStorage.setItem('theme', next);
 });
 
-var chips = document.querySelectorAll('#research .chip');
+var chips = document.querySelectorAll('#research .chip, #research .theme');
 var cards = document.querySelectorAll('#research .card');
 chips.forEach(function (chip) {
   chip.addEventListener('click', function () {

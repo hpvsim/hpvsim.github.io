@@ -24,7 +24,7 @@
 {% set isDash = d.dashboardUrl %}
 {% set papers = d.outputs | countPapers %}
 <a class="card" href="{{ studyHref(study) }}"
-   data-filter="{{ d.status }}{{ ' publications' if d.status != 'in-flight' }}"
+   data-filter="{{ d.status }}{{ ' publications' if d.status != 'in-flight' }} {{ d.researchThemes | join(' ') }}"
    {% if isDash %}target="_blank" rel="noopener"{% endif %}>
   <div class="row">
     <span class="code">{{ d.code }}</span>

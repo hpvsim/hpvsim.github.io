@@ -12,6 +12,12 @@ filters:
   - [publications, Publications]
 ---
 {% from "components.njk" import studyCard, studyHref %}
+{% macro secHead(title, desc) %}
+<div class="sec-head">
+  <h2 class="sec-title">{{ title }}</h2>
+  {% if desc %}<p class="sec-desc">{{ desc }}</p>{% endif %}
+</div>
+{% endmacro %}
 
 <section id="model" class="hero">
   <div class="wrap">
@@ -43,20 +49,14 @@ HPVsim is an agent-based model of HPV transmission and progression through cervi
 
 <section id="research" class="sec">
   <div class="wrap">
-    <p class="kicker">Research</p>
-    <p class="sub">What has been done with the model, and what is under way.</p>
+    {{ secHead("Research", "The HPVsim model has been applied to answer questions that broadly fall into four main research themes.") }}
 
-    <div class="themes">
+    <div class="themes" role="tablist">
       {% for theme in researchThemeIntros %}
-      <div class="theme">
+      <button type="button" class="theme" data-f="{{ theme.slug }}">
         <h3>{{ theme.name }}</h3>
         <p>{{ theme.blurb }}</p>
-        <ul class="theme-links">
-          {% for study in collections.studies | byTheme(theme.slug) %}
-          <li><a href="{{ studyHref(study) }}">{{ study.data.code }} — {{ study.data.title }}</a></li>
-          {% endfor %}
-        </ul>
-      </div>
+      </button>
       {% endfor %}
     </div>
 
@@ -73,8 +73,7 @@ HPVsim is an agent-based model of HPV transmission and progression through cervi
 
 <section id="countries" class="sec">
   <div class="wrap">
-    <p class="kicker">Countries</p>
-    <p class="sub">Settings where HPVsim has informed policy through a published or forthcoming study.</p>
+    {{ secHead("Countries", "Settings where HPVsim has informed policy through a published or forthcoming study.") }}
     <ul class="countries">
       {% for c in countries %}
       {% set study = collections.studies | findStudy(c.studySlug) %}
@@ -86,7 +85,7 @@ HPVsim is an agent-based model of HPV transmission and progression through cervi
 
 <section id="news" class="sec">
   <div class="wrap">
-    <p class="kicker">News</p>
+    {{ secHead("News") }}
     <ul class="news-list">
       {% for item in collections.news %}
       <li class="news-item">
