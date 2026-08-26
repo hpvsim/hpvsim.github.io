@@ -33,6 +33,10 @@ export default [
   { name: "Côte d'Ivoire", analyses: [ONE_DOSE, MULTICAL] },
   { name: 'DR Congo', analyses: [MULTICAL] },
   {
+    name: 'England',
+    analyses: [{ partners: 'University of Oxford' }],
+  },
+  {
     name: 'Ethiopia',
     analyses: [ONE_DOSE, MULTICAL],
   },
