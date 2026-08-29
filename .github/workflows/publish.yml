@@ -5,17 +5,17 @@ on:
     branches: [main]
   workflow_dispatch:
 
+# Deploys by pushing the built site to the gh-pages branch, so Pages must be
+# set to "Deploy from a branch" (gh-pages / root) in the repo settings.
 permissions:
-  contents: read
-  pages: write
-  id-token: write
+  contents: write
 
 concurrency:
   group: pages
   cancel-in-progress: true
 
 jobs:
-  build:
+  build-deploy:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
@@ -24,17 +24,14 @@ jobs:
           node-version: 24
       - run: npm install --no-audit --no-fund
       - run: npm run build
-      - uses: actions/configure-pages@v6
-      - uses: actions/upload-pages-artifact@v5
+      - uses: peaceiris/actions-gh-pages@v4
+        if: github.ref == 'refs/heads/main'
         with:
-          path: ./_site
-
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - id: deployment
-        uses: actions/deploy-pages@v5
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./_site
+          publish_branch: gh-pages
+          # public/CNAME is copied into _site by Eleventy, so the custom domain
+          # survives each force-push of the branch.
+          user_name: github-actions[bot]
+          user_email: github-actions[bot]@users.noreply.github.com
+          commit_message: "Deploy ${{ github.sha }}"
