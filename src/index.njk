@@ -1,0 +1,156 @@
+---
+layout: base.njk
+modelLinks:
+  - [Docs, 'https://docs.hpvsim.org']
+  - [Tutorials, 'https://docs.hpvsim.org/tutorials']
+  - [Code, 'https://github.com/starsimhub/hpvsim']
+  - [Legacy v2.3, 'https://github.com/starsimhub/hpvsim/releases/tag/v2.3.0']
+filters:
+  - [all, All]
+  - [in-flight, In flight]
+  - [peer-reviewed, Peer-reviewed]
+  - [publications, Publications]
+---
+{% from "components.njk" import studyCard, studyHref %}
+{% macro secHead(title, desc) %}
+<div class="sec-head">
+  <h2 class="sec-title">{{ title }}</h2>
+  {% if desc %}<p class="sec-desc">{{ desc }}</p>{% endif %}
+</div>
+{% endmacro %}
+
+<section id="model" class="hero">
+  <div class="wrap">
+    <p class="eyebrow">Agent-based HPV + cervical disease modeling · Built on Starsim</p>
+    <h1>HPVsim</h1>
+    <p class="lede">
+HPVsim is an agent-based model of HPV transmission and progression through cervical disease to cancer. It supports country-specific vital dynamics, structured sexual networks, co-transmitting HPV genotypes, B- and T-cell mediated immunity, and high-resolution disease natural history, plus built-in tools for vaccination, screening, and treatment interventions. It is implemented in pure Python, extensively tested and documented, and runs in seconds to minutes on a laptop.
+    </p>
+    <p class="versions">
+      <strong>v3.0</strong> (released July 2026) is built on the
+      <a href="https://starsim.org" target="_blank" rel="noopener">Starsim</a>
+      architecture and is the actively developed line. The pre-Starsim
+      <strong>v2.3</strong> release (April 2026) is frozen aside from
+      critical bugfixes.
+    </p>
+    <div class="installs">
+      <div class="inst">
+        <span class="lbl">Installation</span>
+        <code>pip install hpvsim</code>
+      </div>
+    </div>
+    <div class="links">
+      {% for link in modelLinks %}
+      <a href="{{ link[1] }}" target="_blank" rel="noopener">{{ link[0] }} <i>↗</i></a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section id="research" class="sec">
+  <div class="wrap">
+    {{ secHead("Research", "The HPVsim model has been applied to answer questions that broadly fall into four main research themes.") }}
+
+    <div class="themes" role="tablist">
+      {% for theme in researchThemeIntros %}
+      <button type="button" class="theme" data-f="{{ theme.slug }}">
+        <h3>{{ theme.name }}</h3>
+        <p>{{ theme.blurb }}</p>
+      </button>
+      {% endfor %}
+    </div>
+
+    <div class="chips" role="tablist">
+      {% for f in filters %}
+      <button class="chip{{ ' on' if loop.first }}" data-f="{{ f[0] }}">{{ f[1] }}</button>
+      {% endfor %}
+    </div>
+    <div class="grid">
+      {% for study in collections.studies %}{{ studyCard(study) }}{% endfor %}
+    </div>
+  </div>
+</section>
+
+<section id="countries" class="sec">
+  <div class="wrap">
+    {{ secHead("Countries", "HPVsim has been calibrated to numerous country contexts, some of which have been part of multi-country studies and others which are in-depth focused analyses looking at informing policy. Not all of these have been published, but the table below has details on how you can get more information about a particular country.") }}
+    <div class="countries-wrap">
+      <table class="countries">
+        <thead>
+          <tr>
+            <th>Country</th>
+            <th>Model/analysis details</th>
+            <th>Partners</th>
+            <th>Publications</th>
+            <th>Code/data</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for c in countries %}
+          <tr>
+            <td class="country-name">{{ c.name }}</td>
+            <td>
+              {% for a in c.analyses %}
+              <div class="cell-line">
+                {% if a.studySlug %}
+                {% set s = collections.studies | findStudy(a.studySlug) %}
+                <a href="{{ studyHref(s) }}">{{ a.label }}</a>
+                {% elif a.label %}
+                {{ a.label }}
+                {% else %}
+                —
+                {% endif %}
+              </div>
+              {% endfor %}
+            </td>
+            <td>
+              {% for a in c.analyses %}<div class="cell-line">{{ a.partners }}</div>{% endfor %}
+            </td>
+            <td>
+              {% for a in c.analyses %}
+              <div class="cell-line">
+                {% if a.pubHref %}
+                <a href="{{ a.pubHref }}" target="_blank" rel="noopener">{{ a.pubLabel }} ↗</a>
+                {% elif a.pubLabel %}
+                {{ a.pubLabel }}
+                {% else %}
+                —
+                {% endif %}
+              </div>
+              {% endfor %}
+            </td>
+            <td>
+              {% for a in c.analyses %}
+              <div class="cell-line">
+                {% if a.codeHref %}
+                <a href="{{ a.codeHref }}" target="_blank" rel="noopener">{{ a.codeLabel }} ↗</a>
+                {% else %}
+                —
+                {% endif %}
+              </div>
+              {% endfor %}
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section id="news" class="sec">
+  <div class="wrap">
+    {{ secHead("News") }}
+    <ul class="news-list">
+      {% for item in collections.news %}
+      <li class="news-item">
+        <span class="news-date">{{ item.data.date | isoDate }}</span>
+        <div>
+          <h4>{% if item.data.href %}<a href="{{ item.data.href }}" target="_blank" rel="noopener">{{ item.data.title }} <i>↗</i></a>{% else %}{{ item.data.title }}{% endif %}</h4>
+          <p>{{ item.data.blurb }}</p>
+        </div>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
