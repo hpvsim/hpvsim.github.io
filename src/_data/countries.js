@@ -146,7 +146,8 @@ export default [
         studySlug: 'zambia-hiv-cervical-cancer',
         partners:
           'University of Bern, Centre for Infectious Disease Research in Zambia, SACEMA, Gates Foundation',
-        pubLabel: 'Forthcoming, Nature Scientific Reports',
+        pubLabel: 'Andoh et al. 2026',
+        pubHref: 'https://doi.org/10.1038/s41598-026-67046-3',
         codeLabel: 'HPVSim_Zambia',
         codeHref: 'https://github.com/AndohJ0/HPVSim_Zambia',
       },

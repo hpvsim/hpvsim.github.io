@@ -145,7 +145,7 @@ a { color: inherit; }
   color: var(--teal-d); margin: 0 0 18px; }
 .hero h1 { font-family: var(--font-display); font-weight: 600; letter-spacing: -.03em;
   font-size: clamp(52px, 11vw, 104px); line-height: .92; margin: 0 0 22px; }
-.hero .lede { max-width: 56ch; font-size: 18px; line-height: 1.6; color: var(--ink-soft); margin: 0 0 30px; }
+.hero .lede { font-size: 18px; line-height: 1.6; color: var(--ink-soft); margin: 0 0 30px; }
 .hero .spec { max-width: 520px; margin: 0 0 30px; }
 
 /* ---------------------------------------------------------------- model section */
@@ -283,14 +283,19 @@ a { color: inherit; }
 
 /* ---------------------------------------------------------------- countries */
 
-.countries-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: var(--r); }
+/* Rows alternate between the warm surface and a teal wash of it, so the table
+   reads as its own panel against the parchment page without a hard border on
+   every row. color-mix keeps both stripes in step with the dark theme. */
+.countries-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: var(--r);
+  background: var(--surface); }
 .countries { width: 100%; border-collapse: collapse; font-size: 13.5px; }
 .countries th, .countries td { text-align: left; padding: 12px 16px; vertical-align: top; }
 .countries thead th { font-family: var(--font-mono); font-size: 11px; letter-spacing: .05em;
   text-transform: uppercase; color: var(--muted); background: var(--surface-2);
   border-bottom: 1px solid var(--line); white-space: nowrap; }
-.countries tbody tr:not(:last-child) td { border-bottom: 1px solid var(--line-2); }
-.countries tbody tr:hover { background: var(--surface-2); }
+.countries tbody tr { transition: background .15s ease; }
+.countries tbody tr:nth-child(even) { background: color-mix(in srgb, var(--teal-bg) 55%, var(--surface)); }
+.countries tbody tr:hover { background: var(--teal-bg); }
 .countries .country-name { font-weight: 600; white-space: nowrap; }
 .countries .cell-line { color: var(--ink-soft); line-height: 1.5; }
 .countries .cell-line:not(:last-child) { margin-bottom: 8px; padding-bottom: 8px;
