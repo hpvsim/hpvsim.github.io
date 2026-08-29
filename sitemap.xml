@@ -1,7 +1,36 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://hpvsim.org/index.html</loc>
-    <lastmod>2026-05-11T15:59:14.260Z</lastmod>
+    <loc>https://hpvsim.org/</loc>
+  </url>
+  <url>
+    <loc>https://hpvsim.org/research/england-screening-treatment/</loc>
+  </url>
+  <url>
+    <loc>https://hpvsim.org/research/global-cancer-registry-calibration/</loc>
+  </url>
+  <url>
+    <loc>https://hpvsim.org/research/hpvsim-methods/</loc>
+  </url>
+  <url>
+    <loc>https://hpvsim.org/research/nigeria-infant-vaccination/</loc>
+  </url>
+  <url>
+    <loc>https://hpvsim.org/research/pruning-calibration/</loc>
+  </url>
+  <url>
+    <loc>https://hpvsim.org/research/rwanda-cervical-cancer-elimination/</loc>
+  </url>
+  <url>
+    <loc>https://hpvsim.org/research/single-dose-vaccination/</loc>
+  </url>
+  <url>
+    <loc>https://hpvsim.org/research/tunisia-screening-vaccination/</loc>
+  </url>
+  <url>
+    <loc>https://hpvsim.org/research/vaccination-older-cohorts/</loc>
+  </url>
+  <url>
+    <loc>https://hpvsim.org/research/zambia-hiv-cervical-cancer/</loc>
   </url>
 </urlset>
