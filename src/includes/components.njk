@@ -4,8 +4,8 @@
 #}
 
 {% macro statusPill(status) %}
-{% set labels = { 'peer-reviewed': 'Peer-reviewed', 'in-flight': 'In flight', 'write-up': 'Write-up' } %}
-{% set classes = { 'peer-reviewed': 'ok', 'in-flight': 'fly', 'write-up': 'pub' } %}
+{% set labels = { 'peer-reviewed': 'Peer-reviewed', 'in-flight': 'In flight', 'write-up': 'Write-up', 'complete': 'Complete' } %}
+{% set classes = { 'peer-reviewed': 'ok', 'in-flight': 'fly', 'write-up': 'pub', 'complete': 'done' } %}
 <span class="pill {{ classes[status] }}">{{ labels[status] }}</span>
 {% endmacro %}
 

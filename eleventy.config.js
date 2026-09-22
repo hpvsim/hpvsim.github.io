@@ -75,7 +75,7 @@ export default function (eleventyConfig) {
   );
 
   eleventyConfig.addFilter('countPapers', (outputs) =>
-    (outputs || []).filter((o) => (o.kind || 'other') === 'paper').length
+    (outputs || []).filter((o) => ['paper', 'preprint'].includes(o.kind)).length
   );
 
   eleventyConfig.addFilter('isoDate', (value) =>

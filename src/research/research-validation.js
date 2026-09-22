@@ -2,8 +2,8 @@
 // so this stands in for one: it runs while the studies collection is built, and
 // throwing here fails the build rather than shipping a broken card.
 
-const STATUSES = ['peer-reviewed', 'write-up', 'in-flight'];
-const OUTPUT_KINDS = ['paper', 'slides', 'poster', 'code', 'dataset', 'other'];
+const STATUSES = ['peer-reviewed', 'write-up', 'in-flight', 'complete'];
+const OUTPUT_KINDS = ['paper', 'preprint', 'slides', 'poster', 'code', 'dataset', 'other'];
 const RESEARCH_THEMES = [
   'vaccination-access',
   'screening-treatment',

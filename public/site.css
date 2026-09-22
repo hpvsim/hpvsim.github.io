@@ -17,6 +17,7 @@
 
   --ok-bg: #e4efe9; --ok-tx: #2c6e63;
   --fly-bg: #f6ebdd; --fly-tx: #9a5a17;
+  --done-bg: #e3e6ee; --done-tx: #43507a;
 
   --font-display: "Raleway", system-ui, sans-serif;
   --font-body: "Raleway", system-ui, -apple-system, sans-serif;
@@ -43,6 +44,7 @@
     --teal-bg: #10333a;
     --ok-bg:#123329;--ok-tx:#8fd8c2;
     --fly-bg:#3a2c15;--fly-tx:#e7c283;
+    --done-bg:#1c2440;--done-tx:#a9b4e0;
     --shadow: 0 1px 2px rgba(0,0,0,.3), 0 10px 30px rgba(0,0,0,.35);
     --shadow-lift: 0 2px 4px rgba(0,0,0,.35), 0 18px 44px rgba(0,0,0,.5);
   }
@@ -62,6 +64,7 @@
   --teal-bg: #10333a;
   --ok-bg:#123329;--ok-tx:#8fd8c2;
   --fly-bg:#3a2c15;--fly-tx:#e7c283;
+  --done-bg:#1c2440;--done-tx:#a9b4e0;
   --shadow: 0 1px 2px rgba(0,0,0,.3), 0 10px 30px rgba(0,0,0,.35);
   --shadow-lift: 0 2px 4px rgba(0,0,0,.35), 0 18px 44px rgba(0,0,0,.5);
 }
@@ -137,6 +140,7 @@ a { color: inherit; }
 .pill.ok { background: var(--ok-bg); color: var(--ok-tx); }
 .pill.fly { background: var(--fly-bg); color: var(--fly-tx); }
 .pill.pub { background: var(--teal-bg); color: var(--teal-d); }
+.pill.done { background: var(--done-bg); color: var(--done-tx); }
 
 /* ---------------------------------------------------------------- hero */
 
