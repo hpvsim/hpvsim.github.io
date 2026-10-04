@@ -97,6 +97,8 @@ export default [
         label: 'Infant HPV prophylactic vaccination',
         studySlug: 'nigeria-infant-vaccination',
         partners: 'Gates Foundation, Nnamdi Azikiwe University, Awka, Nigeria',
+        pubLabel: 'Stuart et al. 2026',
+        pubHref: 'https://doi.org/10.64898/2026.09.30.26364434',
         codeLabel: 'hpvsim_pxv_younger',
         codeHref: 'https://github.com/hpvsim/hpvsim_pxv_younger',
       },
